@@ -71,5 +71,10 @@ return require('packer').startup(function(use)
         'kevinhwang91/nvim-ufo',
         requires = 'kevinhwang91/promise-async'
     }
+
+    use {
+        'romgrk/barbar.nvim',
+        wants = 'nvim-web-devicons'
+    }
 end)
 

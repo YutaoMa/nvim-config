@@ -5,7 +5,7 @@ else
 
     -- catppuccin/nvim
     require('catppuccin').setup({
-        flavour = 'macchiato',
+        flavour = 'mocha',
         transparent_background = true,
         integrations = {
             leap = true,
@@ -57,6 +57,16 @@ else
                 foldingRange = {
                     dynamicRegistration = false,
                     lineFoldingOnly = true
+                }
+            }
+        }
+    })
+
+    lsp.configure('sumneko_lua', {
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { 'vim' }
                 }
             }
         }
