@@ -1,0 +1,76 @@
+[
+    {
+        "command": "workbench.action.navigateUp",
+        "key": "ctrl+k",
+        "when": "terminalFocus",
+    }, {
+        "command": "workbench.action.navigateDown",
+        "key": "ctrl+j",
+        "when": "terminalFocus",
+    }, {
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "key": "ctrl+h",
+        "when": "terminalFocus",
+    }, {
+        "command": "workbench.action.terminal.focusNextPane",
+        "key": "ctrl+l",
+        "when": "terminalFocus",
+    }, {
+        "command": "workbench.action.navigateRight",
+        "key": "ctrl+l",
+        "when": "sideBarFocus",
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+        "when": "!activeEditorGroupEmpty"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "cmd+k alt+cmd+right",
+        "command": "-workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "cmd+k alt+cmd+left",
+        "command": "-workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-deleteAllRight",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus && neovim.ctrlKeysInsert && neovim.mode == 'insert'",
+        "args": "<C-k>"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "vscode-neovim.send",
+        "when": "editorTextFocus && neovim.ctrlKeysInsert && neovim.mode == 'insert'",
+        "args": "<C-l>"
+    }
+]
