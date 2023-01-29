@@ -76,5 +76,6 @@ return require('packer').startup(function(use)
         'romgrk/barbar.nvim',
         wants = 'nvim-web-devicons'
     }
-end)
 
+    use 'j-hui/fidget.nvim'
+end)

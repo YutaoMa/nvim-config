@@ -2,23 +2,23 @@
     {
         "command": "workbench.action.navigateUp",
         "key": "ctrl+k",
-        "when": "terminalFocus",
+        "when": "terminalFocus"
     }, {
         "command": "workbench.action.navigateDown",
         "key": "ctrl+j",
-        "when": "terminalFocus",
+        "when": "terminalFocus"
     }, {
         "command": "workbench.action.terminal.focusPreviousPane",
         "key": "ctrl+h",
-        "when": "terminalFocus",
+        "when": "terminalFocus"
     }, {
         "command": "workbench.action.terminal.focusNextPane",
         "key": "ctrl+l",
-        "when": "terminalFocus",
+        "when": "terminalFocus"
     }, {
         "command": "workbench.action.navigateRight",
         "key": "ctrl+l",
-        "when": "sideBarFocus",
+        "when": "sideBarFocus"
     },
     {
         "key": "ctrl+tab",

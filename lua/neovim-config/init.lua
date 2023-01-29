@@ -1,5 +1,5 @@
-require('neovim.plugins')
-require('neovim.remaps')
+require('neovim-config.plugins')
+require('neovim-config.remaps')
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -13,6 +13,7 @@ vim.opt.expandtab = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
 
 vim.opt.smartindent = true
 
@@ -31,3 +32,5 @@ vim.opt.colorcolumn = '80'
 
 vim.opt.signcolumn = 'yes:1'
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true

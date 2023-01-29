@@ -1,5 +1,8 @@
 if vim.g.vscode then
     -- VSCode extension
+
+    -- ggandor/leap.nvim
+    require('leap').add_default_mappings()
 else
     -- Ordinary Neovim
 
@@ -17,7 +20,8 @@ else
             nvimtree = true,
             treesitter = true,
             telescope = true,
-            gitsigns = true
+            gitsigns = true,
+            fidget = true
         }
     })
 
@@ -82,7 +86,20 @@ else
     vim.keymap.set('n', '<leader>ht', builtin.help_tags, {})
 
     -- nvim-tree/nvim-tree.lua
-    require('nvim-tree').setup()
+    require('nvim-tree').setup({
+        renderer = {
+            icons = {
+                glyphs = {
+                    git = {
+                        unstaged = 'U'
+                    }
+                }
+            }
+        },
+        diagnostics = {
+            enable = true
+        }
+    })
 
     vim.keymap.set('n', '<leader>tt', vim.cmd.NvimTreeToggle)
 
@@ -110,5 +127,11 @@ else
 
     -- mbbill/undotree
     vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
-end
 
+    -- j-hui/fidget.nvim
+    require('fidget').setup({
+        window = {
+            blend = 0
+        }
+    })
+end

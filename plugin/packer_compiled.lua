@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "/Users/yutaoma/.local/share/nvim/site/pack/packer/start/feline.nvim",
     url = "https://github.com/feline-nvim/feline.nvim"
   },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/Users/yutaoma/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/yutaoma/.local/share/nvim/site/pack/packer/start/friendly-snippets",
