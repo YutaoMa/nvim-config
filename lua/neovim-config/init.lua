@@ -1,5 +1,6 @@
 require('neovim-config.plugins')
 require('neovim-config.remaps')
+require('neovim-config.plugins-config')
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
