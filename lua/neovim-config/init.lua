@@ -29,9 +29,11 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
-vim.opt.colorcolumn = '80'
 
 vim.opt.signcolumn = 'yes:1'
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+vim.opt.splitright = true
+vim.opt.splitbelow = true

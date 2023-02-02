@@ -13,7 +13,8 @@ require('catppuccin').setup({
         treesitter = true,
         telescope = true,
         gitsigns = true,
-        fidget = true
+        fidget = true,
+        barbar = true
     }
 })
 
@@ -32,7 +33,7 @@ require('feline').setup({
 })
 
 -- tpope/vim-fugitive
-vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git status' })
 
 -- lewis6991/gitsigns.nvim
 require('gitsigns').setup({
@@ -72,10 +73,10 @@ lsp.setup()
 
 -- nvim-telescope/telescope.nvim
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
-vim.keymap.set('n', '<leader>lg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>ht', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Telescope git files' })
+vim.keymap.set('n', '<leader>lg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>ht', builtin.help_tags, { desc = 'Telescope help tokens' })
 
 -- nvim-tree/nvim-tree.lua
 require('nvim-tree').setup({
@@ -90,10 +91,15 @@ require('nvim-tree').setup({
     },
     diagnostics = {
         enable = true
+    },
+    filters = {
+        custom = {
+            '^.git$'
+        }
     }
 })
 
-vim.keymap.set('n', '<leader>tt', vim.cmd.NvimTreeToggle)
+vim.keymap.set('n', '<leader>tt', vim.cmd.NvimTreeToggle, { desc = 'Nvim-Tree toggle' })
 
 -- nvim-treesitter/nvim-treesitter
 require'nvim-treesitter.configs'.setup {
@@ -112,8 +118,8 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds, { desc = 'Open all folds' })
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds, { desc = 'Close all folds' })
 
 require('ufo').setup()
 
