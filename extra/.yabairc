@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+
+yabai -m config                                 \
+    active_window_border_color   0xffcba6f7     \
+    window_border_width          2              \
+    window_border_radius         12             \
+    window_border_hidpi          on             \
+    window_border                on             \
+    split_ratio                  0.50           \
+    split_type                   auto           \
+    top_padding                  12             \
+    bottom_padding               12             \
+    left_padding                 12             \
+    right_padding                12             \
+    window_gap                   6             \
+    layout                       bsp            \
+    mouse_modifier               fn             \
+    mouse_action1                move           \
+    mouse_action2                resize         \
+    mouse_drop_action            swap          \
+    external_bar                 all:0:28
+
+yabai -m space 1 --label Communication
+yabai -m space 2 --label Research
+yabai -m space 3 --label Development
+
+yabai -m rule --add app="^Slack$" space=^1
+yabai -m rule --add app="^Microsoft Outlook$" space=^1
+yabai -m rule --add app="^Amazon Chime$" space=^1
+
+yabai -m rule --add app="^Google Chrome$" space=^2
+yabai -m rule --add app="^Notion$" space=^2
+
+yabai -m rule --add app="^Visual Studio Code$" space=^3
+
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^iTerm2$" manage=off border=off
+yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off
+yabai -m rule --add app="^Fig$" manage=off border=off
