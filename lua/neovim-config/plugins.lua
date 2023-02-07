@@ -61,8 +61,6 @@ return require('packer').startup(function(use)
 
     use 'ggandor/leap.nvim'
 
-    use 'feline-nvim/feline.nvim'
-
     use 'nvim-tree/nvim-web-devicons'
 
     use 'lewis6991/gitsigns.nvim'
@@ -88,4 +86,17 @@ return require('packer').startup(function(use)
             }
         end
     }
+
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
+
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use 'voldikss/vim-floaterm'
 end)

@@ -14,3 +14,5 @@ vim.keymap.set('n', '[b', vim.cmd.BufferPrevious, { desc = 'Previous buffer' })
 -- Mimic VSCode command palette
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<F1>', builtin.builtin, { desc = 'Telescope all builtin pickers' })
+
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode with ESC' })

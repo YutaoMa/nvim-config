@@ -25,13 +25,6 @@ require'nvim-web-devicons'.setup({
     default = true
 })
 
--- feline-nvim/feline.nvim
-local ctp_feline = require('catppuccin.groups.integrations.feline')
-
-require('feline').setup({
-    components = ctp_feline.get()
-})
-
 -- tpope/vim-fugitive
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git status' })
 
@@ -39,6 +32,16 @@ vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = 'Git status' })
 require('gitsigns').setup({
     current_line_blame = true
 })
+
+local gs = require('gitsigns')
+
+vim.keymap.set('n', '[c', function()
+    gs.prev_hunk();
+end, { desc = 'Previous git change chunk' })
+
+vim.keymap.set('n', ']c', function()
+    gs.next_hunk();
+end, { desc = 'Next git change chunk' })
 
 -- ggandor/leap.nvim
 require('leap').add_default_mappings()
@@ -70,6 +73,10 @@ lsp.configure('sumneko_lua', {
 })
 
 lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true
+})
 
 -- nvim-telescope/telescope.nvim
 local builtin = require('telescope.builtin')
@@ -134,6 +141,10 @@ require('fidget').setup({
 })
 
 -- romgrk/barbar.nvim
+require('bufferline').setup({
+    exclude_ft = { 'fugitive', 'qf' }
+})
+
 local nvim_tree_events = require('nvim-tree.events')
 local bufferline_api = require('bufferline.api')
 
@@ -152,3 +163,14 @@ end)
 nvim_tree_events.subscribe('TreeClose', function()
     bufferline_api.set_offset(0)
 end)
+
+-- nvim-lualine/lualine.nvim
+require('lualine').setup {
+    options = {
+        theme = "catppuccin",
+        globalstatus = true
+    }
+}
+
+-- voldikss/vim-floaterm
+vim.keymap.set('n', '<leader>ft', vim.cmd.FloatermToggle, { desc = 'Toggle float terminal' })
