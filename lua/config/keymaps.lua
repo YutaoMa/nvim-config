@@ -10,3 +10,6 @@ keymap.set('n', '<leader>C', '\"_C', { desc = 'Blackhole selected text when repl
 keymap.set({'n', 'v'}, '<leader>y', '\"+y', { desc = 'Copy to system clipboard' })
 keymap.set('n', '<leader>Y', '\"+Y', { desc = 'Copy line to system clipboard' })
 keymap.set({'n', 'v'}, '<leader>d', '\"_d', { desc = 'Blackhole when deleting' })
+
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<F1>', builtin.builtin, { desc = 'Telescope all builtin pickers' })
