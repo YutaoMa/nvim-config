@@ -12,3 +12,5 @@ keymap.set({"n", "v"}, "<leader>y", "\"+y", { desc = "Copy to system clipboard" 
 keymap.set("n", "<leader>Y", "\"+Y", { desc = "Copy line to system clipboard" })
 
 keymap.set("n", "<leader>g", function() require("lazy.util").float_term("lazygit", {}) end, { desc = "Lazygit" })
+
+keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal-mode" })

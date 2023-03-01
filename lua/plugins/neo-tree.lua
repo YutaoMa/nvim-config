@@ -31,5 +31,10 @@ return {
 		filesystem = {
 			follow_current_file = true,
 		},
+		window = {
+			mappings = {
+				["<space>"] = "none",
+			}
+		},
 	},
 }
