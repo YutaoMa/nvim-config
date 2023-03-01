@@ -15,3 +15,5 @@ keymap.set("n", "<leader>Y", "\"+Y", { desc = "Copy line to system clipboard" })
 keymap.set("n", "<leader>g", function() require("lazy.util").float_term("lazygit", {}) end, { desc = "Lazygit" })
 
 keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal-mode" })
+keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostics" })
+keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostics" })

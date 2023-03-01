@@ -18,6 +18,8 @@ return {
 
 			local lsp_attach = function(_, bufnr)
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "Hover" })
+				vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Goto definition" })
+				vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, desc = "Goto references" })
 			end
 
 			local lsp_config = require("lspconfig")
@@ -41,7 +43,12 @@ return {
 			return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" }
-				})
+				}),
+				mapping = cmp.mapping.preset.insert({
+					["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+					["<Tab>"] = cmp.mapping.confirm({ select = true }),
+				}),
 			}
 		end,
 	},
