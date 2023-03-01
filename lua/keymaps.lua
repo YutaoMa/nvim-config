@@ -10,3 +10,5 @@ keymap.set("n", "<leader>C", "\"_C", { desc = "Blackhole seletced text and chang
 keymap.set({"n", "v"}, "<leader>d", "\"_d", { desc = "Blackhole when deleting" })
 keymap.set({"n", "v"}, "<leader>y", "\"+y", { desc = "Copy to system clipboard" })
 keymap.set("n", "<leader>Y", "\"+Y", { desc = "Copy line to system clipboard" })
+
+keymap.set("n", "<leader>g", function() require("lazy.util").float_term("lazygit", {}) end, { desc = "Lazygit" })
