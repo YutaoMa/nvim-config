@@ -11,6 +11,10 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+			lsp_capabilities.textDocument.foldingRange = {
+				dynamicRegistration = true,
+				lineFoldingOnly = true,
+			}
 
 			local lsp_attach = function(_, bufnr)
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "Hover" })
@@ -32,6 +36,13 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
-		opts = {},
+		opts = function()
+			local cmp = require("cmp")
+			return {
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp" }
+				})
+			}
+		end,
 	},
 }

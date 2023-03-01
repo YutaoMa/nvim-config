@@ -3,6 +3,7 @@ local keymap = vim.keymap
 
 keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope Find Files" })
 keymap.set("n", "<F1>", builtin.builtin, { desc = "Telescope Built-in Pickers" })
+keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope Live Grep" })
 
 keymap.set("x", "<leader>p", "\"_dP", { desc = "Blackhole selected text and paste" })
 keymap.set("n", "<leader>c", "\"_c", { desc = "Blackhole selected text and change" })
