@@ -16,16 +16,20 @@ return {
 			desc = "Prev buffer",
 		},
 	},
-	opts = {
-		options = {
-			offsets = {
-				{
-					filetype = "neo-tree",
-					text = "Neo-tree",
-					highlight = "Directory",
-					text_align = "left",
+	opts = function()
+		return {
+			options = {
+				offsets = {
+					{
+						filetype = "neo-tree",
+						text = "Neo-tree",
+						highlight = "Directory",
+						text_align = "left",
+						separator = true,
+					},
 				},
 			},
-		},
-	},
+			highlights = require("catppuccin.groups.integrations.bufferline").get()
+		}
+	end,
 }

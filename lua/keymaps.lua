@@ -17,3 +17,5 @@ keymap.set("n", "<leader>g", function() require("lazy.util").float_term("lazygit
 keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal-mode" })
 keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostics" })
 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostics" })
+
+keymap.set("n", "<leader>w", "<Cmd>set wrap!<cr>", { desc = "Toggle wrap" })
