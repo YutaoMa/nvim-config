@@ -18,6 +18,7 @@ return {
 			neotree = true,
 			gitsigns = true,
 			fidget = true,
+			leap = true,
 			indent_blankline = {
 				enabled = true,
 			},
