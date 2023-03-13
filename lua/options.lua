@@ -13,6 +13,9 @@ opt.cursorline = true
 
 opt.tabstop = 4
 opt.shiftwidth = 4
+opt.expandtab = true
+opt.smartindent = true
+opt.autoindent = true
 
 opt.hlsearch = true
 opt.incsearch = true
@@ -25,3 +28,6 @@ opt.splitbelow = true
 opt.signcolumn = "yes:1"
 
 opt.list = true
+
+opt.scrolloff = 8
+opt.wrap = false

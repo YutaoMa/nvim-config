@@ -5,7 +5,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("options")
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+    change_detection = {
+        notify = false,
+    },
+})
 require("keymaps")
 
 vim.cmd.colorscheme "catppuccin"

@@ -17,7 +17,7 @@ return {
 
 			local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 			lsp_capabilities.textDocument.foldingRange = {
-				dynamicRegistration = true,
+				dynamicRegistration = false,
 				lineFoldingOnly = true,
 			}
 

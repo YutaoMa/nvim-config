@@ -19,8 +19,3 @@ keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostics" })
 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostics" })
 
 keymap.set("n", "<leader>w", "<Cmd>set wrap!<cr>", { desc = "Toggle wrap" })
-
-keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
-keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
-keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
-keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
