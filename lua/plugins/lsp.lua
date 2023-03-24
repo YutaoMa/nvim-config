@@ -60,10 +60,40 @@ return {
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
 		},
 		opts = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
+
+			cmp.setup.cmdline("/", {
+				sources = {
+					{ name = "buffer" },
+				},
+				mapping = cmp.mapping.preset.cmdline({
+					["<Tab>"] = cmp.mapping(function()
+						cmp.confirm()
+					end, { "c" }),
+				}),
+			})
+
+			cmp.setup.cmdline(":", {
+				sources = cmp.config.sources({
+					{ name = "path" }
+				}, {
+					{
+						name = "cmdline",
+						option = {
+							ignore_cmds = { "Man", "!" }
+						}
+					}
+				}),
+				mapping = cmp.mapping.preset.cmdline({
+					["<Tab>"] = cmp.mapping(function()
+						cmp.confirm()
+					end, { "c" }),
+				}),
+			})
 
 			return {
 				completion = {
