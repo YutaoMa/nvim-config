@@ -8,6 +8,7 @@ return {
 			return {
 				VertSplit = { fg = colors.lavender },
 				BufferLineOffsetSeparator = { fg = colors.lavender },
+				NvimTreeWinSeparator = { fg = colors.lavender },
 				TroubleNormal = { bg = "NONE" },
 			}
 		end,
@@ -15,7 +16,7 @@ return {
 			cmp = true,
 			telescope = true,
 			which_key = true,
-			neotree = true,
+			nvimtree = true,
 			gitsigns = true,
 			fidget = true,
 			leap = true,
