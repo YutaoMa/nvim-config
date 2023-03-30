@@ -11,6 +11,20 @@ return {
 		"folke/neodev.nvim",
 	},
 	{
+		"jose-elias-alvarez/null-ls.nvim",
+		opts = function()
+			local null_ls = require("null-ls")
+
+			return {
+				sources = {
+					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.diagnostics.eslint,
+					null_ls.builtins.completion.spell,
+				},
+			}
+		end,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			require("neodev").setup({})
@@ -31,7 +45,7 @@ return {
 				vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, { buffer = bufnr, desc = "Signature help" })
 				vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { buffer = bufnr, desc = "Signature help" })
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Goto definition" })
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, desc = "Goto references" })
+				vim.keymap.set("n", "gr", "<Cmd>TroubleToggle lsp_references<Cr>", { buffer = bufnr, desc = "Goto references" })
 				vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line diagnostics" })
 			end
 
