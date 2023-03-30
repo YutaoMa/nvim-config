@@ -27,6 +27,10 @@ return {
 				enabled = true,
 			},
 			lsp_trouble = true,
+			aerial = true,
+			noice = true,
+			treesitter = true,
+			mini = true,
 		},
 	},
 }

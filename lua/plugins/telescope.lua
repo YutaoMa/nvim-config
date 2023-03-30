@@ -22,7 +22,9 @@ return {
                     n = { ["<c-t>"] = trouble.open_with_trouble },
                 },
                 layout_config = {
-                    preview_width = 0.66,
+                    horizontal = {
+                        preview_width = 0.66,
+                    },
                 },
             },
         }
