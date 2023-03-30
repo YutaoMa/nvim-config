@@ -5,7 +5,7 @@ return {
 		{ "S", mode = { "n", "x", "o" }, desc = "Leap backward" },
 		{ "gs", mode = { "n", "x", "o" }, desc = "Leap windows" },
 	},
-	config = function(_, opts)
+	config = function(_, _)
 		require("leap").add_default_mappings()
 		vim.keymap.del({ "x", "o" }, "x")
 		vim.keymap.del({ "x", "o" }, "X")

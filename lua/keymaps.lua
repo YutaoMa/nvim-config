@@ -6,8 +6,6 @@ keymap.set("n", "<F1>", builtin.builtin, { desc = "Telescope Built-in Pickers" }
 keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope Live Grep" })
 
 keymap.set("x", "<leader>p", "\"_dP", { desc = "Blackhole selected text and paste" })
-keymap.set("n", "<leader>c", "\"_c", { desc = "Blackhole selected text and change" })
-keymap.set("n", "<leader>C", "\"_C", { desc = "Blackhole seletced text and change line" })
 keymap.set({"n", "v"}, "<leader>d", "\"_d", { desc = "Blackhole when deleting" })
 keymap.set({"n", "v"}, "<leader>y", "\"+y", { desc = "Copy to system clipboard" })
 keymap.set("n", "<leader>Y", "\"+Y", { desc = "Copy line to system clipboard" })
@@ -19,3 +17,4 @@ keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostics" })
 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostics" })
 
 keymap.set("n", "<leader>w", "<Cmd>set wrap!<cr>", { desc = "Toggle wrap" })
+keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })

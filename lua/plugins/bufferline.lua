@@ -21,12 +21,15 @@ return {
 			options = {
 				offsets = {
 					{
-						filetype = "neo-tree",
-						text = "Neo-tree",
+						filetype = "NvimTree",
+						text = "Nvim-Tree",
 						highlight = "Directory",
 						text_align = "left",
 						separator = true,
 					},
+				},
+				indicator = {
+					style = "none",
 				},
 			},
 			highlights = require("catppuccin.groups.integrations.bufferline").get()
