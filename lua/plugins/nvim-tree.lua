@@ -6,7 +6,7 @@ return {
 	keys = {
 		{
 			"<leader>e",
-			"<Cmd>NvimTreeToggle<Cr>",
+			"<Cmd>NvimTreeFindFileToggle<Cr>",
 			desc = "Toggle Nvim-tree",
 		},
 	},

@@ -15,11 +15,16 @@ return {
 		opts = function()
 			local null_ls = require("null-ls")
 
+			local eslint_d = null_ls.builtins.diagnostics.eslint_d.with({
+				condition = function(utils)
+					return utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
+				end
+			})
+
 			return {
 				sources = {
 					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.diagnostics.eslint,
-					null_ls.builtins.completion.spell,
+					eslint_d,
 					null_ls.builtins.code_actions.gitsigns,
 				},
 			}
@@ -64,6 +69,27 @@ return {
 						handlers = lsp_handlers,
 					})
 				end,
+			})
+
+			-- Barium
+			local configs = require("lspconfig.configs")
+			if not configs.barium then
+				configs.barium = {
+					default_config = {
+						cmd = { "barium" },
+						filetypes = { "brazil-config" },
+						root_dir = function(fname)
+							return lsp_config.util.find_git_ancestor(fname)
+						end,
+						settings = {},
+					},
+				}
+			end
+
+			lsp_config.barium.setup({
+				on_attach = lsp_attach,
+				capabilities = lsp_capabilities,
+				handlers = lsp_handlers,
 			})
 		end,
 	},
