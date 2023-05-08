@@ -44,4 +44,4 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-vim.filetype.add({ filename = { Config = "brazil-config" } })
+vim.filetype.add({ filename = { Config = "brazil_config" } })

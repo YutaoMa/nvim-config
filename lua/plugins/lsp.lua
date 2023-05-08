@@ -77,7 +77,7 @@ return {
 				configs.barium = {
 					default_config = {
 						cmd = { "barium" },
-						filetypes = { "brazil-config" },
+						filetypes = { "brazil_config" },
 						root_dir = function(fname)
 							return lsp_config.util.find_git_ancestor(fname)
 						end,
