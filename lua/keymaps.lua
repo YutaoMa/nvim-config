@@ -16,7 +16,9 @@ keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal-mode" })
 keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostics" })
 keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostics" })
 
-keymap.set("n", "<leader>w", "<Cmd>set wrap!<cr>", { desc = "Toggle wrap" })
 keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
 
 keymap.set("n", "<leader>q", "<C-w>q", { desc = "Quit" })
+
+-- u for UI changes
+keymap.set("n", "<leader>uw", "<Cmd>set wrap!<cr>", { desc = "Toggle wrap" })
